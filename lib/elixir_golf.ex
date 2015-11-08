@@ -1,16 +1,6 @@
 defmodule ElixirGolf do
   def start do
     import String
-    import Enum
-    :stdio
-      |> IO.gets
-      |> strip
-      |> codepoints
-      |> map(&to_integer/1)
-      |> map(fn
-        x when rem(x , 2) == 0  -> "e"
-        x                       -> "o"
-      end)
-      |> join
+    for s <- codepoints(IO.gets(:stdio)), s != "\n", c = to_integer(s), do: Enum.at 'eo',rem(c, 2)
   end
 end
