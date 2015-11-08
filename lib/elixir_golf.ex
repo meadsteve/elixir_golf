@@ -1,6 +1,5 @@
 defmodule ElixirGolf do
   def start do
-    import String
-    for s <- codepoints(IO.gets(:stdio)), s != "\n", c = to_integer(s), do: Enum.at 'eo',rem(c, 2)
+    import String;for s<-:stdio|>IO.gets|>codepoints,s !="\n",x=s|>to_integer|>rem(2),do: Enum.at'eo',x
   end
 end
