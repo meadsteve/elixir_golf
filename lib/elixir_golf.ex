@@ -1,0 +1,2 @@
+defmodule ElixirGolf do
+end
